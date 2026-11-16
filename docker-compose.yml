@@ -1,0 +1,14 @@
+services:
+  whiteboard:
+    build: .
+    container_name: lan-whiteboard
+    restart: unless-stopped
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8080
+      TEACHER_SECRET: ${TEACHER_SECRET:-please-change-this-secret}
+      MAX_CONNECTIONS: 600
+      MAX_POINTS_PER_MESSAGE: 80
+      MAX_STROKES_PER_ROOM: 12000
+    ports:
+      - "8080:8080"
