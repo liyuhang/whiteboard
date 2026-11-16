@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>互动白板 - 学生端</title><link rel="stylesheet" href="/style.css">
+</head>
+<body data-role="student">
+<header><h1>互动白板 · 学生端</h1><span class="status" id="status">未连接</span></header>
+<main>
+  <section class="panel" id="joinPanel">
+    <h3>加入课堂白板</h3>
+    <div class="toolbar">
+      <input id="roomInput" placeholder="输入房间号" maxlength="6">
+      <input id="studentName" placeholder="你的昵称" value="学生">
+      <button class="primary" id="joinRoom">加入</button>
+    </div>
+  </section>
+  <section class="panel hidden" id="workspace">
+    <div class="info"><span>房间：<b id="roomLabel"></b></span><span>连接：<b id="connection">离线</b></span><span>在线人数：<b id="participants">1</b></span><span id="permission"></span></div>
+    <div class="toolbar">
+      <label>颜色 <input type="color" id="color" value="#1565c0"></label>
+      <label>粗细 <input type="range" id="width" min="1" max="18" value="4"></label>
+    </div>
+    <p class="notice">在白板区域用手指绘画。所有课堂成员都能看到你的笔迹及其他人的笔迹。</p>
+  </section>
+  <section class="canvas-wrap hidden" id="canvasWrap"><canvas id="board" width="1200" height="800"></canvas></section>
+</main>
+<script src="/app.js"></script>
+</body></html>
